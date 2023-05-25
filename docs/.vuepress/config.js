@@ -10,19 +10,20 @@ module.exports = {
   ],// 需要被注入到当前页面的 HTML <head> 中的标签
   markdown: {
     lineNumbers: true, // 代码行号
-    extractHeaders: [ 'h2', 'h3', 'h4', 'h5', 'h6' ]
+    toc: { includeLevel: [1, 2, 3,4] },
+    extractHeaders: [ 'h2', 'h3', 'h4']
   },
   base: '/',
   themeConfig: {
     logo: '/img/logo.png',
     //displayAllHeaders: true, // 默认值：false
     sidebar: {
-      '/docs/bot/':[
+      '/docs/bot/': [
         '',
         'init',
         'cmd'
       ],
-      '/docs/':[
+      '/docs/': [
         './',
         'bot/'
       ],
