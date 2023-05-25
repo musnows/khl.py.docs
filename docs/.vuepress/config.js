@@ -8,28 +8,14 @@ module.exports = {
     ['script', {charset:'UTF-8',id:'LA_COLLECT',src:'//sdk.51.la/js-sdk-pro.min.js'}],
     ['script', {}, `LA.init({id:"K4jpll24hC6vwBJ0",ck:"K4jpll24hC6vwBJ0"})`]
   ],// 需要被注入到当前页面的 HTML <head> 中的标签
-  base: '/',
+  base:'/',
   themeConfig: {
     logo: '/img/logo.png',
     nav: [
       { text: '主页', link: '/' },
       { text: '文档', link: '/docs/' },
       { text: 'Github', link: 'https://github.com/TWT233/khl.py' },
+      { text: 'KOOK', link: 'https://kook.top/exKy0f' },
     ]
-  },
-  plugins: [
-    [
-      'vuepress-plugin-vdoing-comment',
-      {
-        choosen: 'artalk',
-        options: {
-          server: 'https://artk.musnow.top', // （必填）
-          site: 'khl-py', // （必填）
-          // disableEmotion: false, // 是否禁用表情（可选）
-          // disablePicture: true, // 是否禁用图片（可选）
-          // disablePreview: false // 是否禁用预览（可选）
-        }
-      }
-    ]
-  ]
+  }
 }
