@@ -11,9 +11,12 @@ module.exports = {
   base:'/',
   themeConfig: {
     logo: '/img/logo.png',
+    displayAllHeaders: true, // 默认值：false
+    sidebar: 'auto',
     nav: [
       { text: '主页', link: '/' },
       { text: '文档', link: '/docs/' },
+      { text: '示例', link: '/exp/' },
       { text: 'Github', link: 'https://github.com/TWT233/khl.py' },
       { text: 'KOOK', link: 'https://kook.top/exKy0f' },
     ]
