@@ -14,5 +14,20 @@ module.exports = {
         { text: '文档', link: '/docs/' },
         { text: 'Github', link: 'https://github.com/TWT233/khl.py' },
       ]
-    }
+    },
+    plugins: [
+      [
+        'vuepress-plugin-vdoing-comment',
+        {
+          choosen: 'artalk',
+          options: {
+              server: 'https://artk.musnow.top', // （必填）
+              site: 'khl-py', // （必填）
+              // disableEmotion: false, // 是否禁用表情（可选）
+              // disablePicture: true, // 是否禁用图片（可选）
+              // disablePreview: false // 是否禁用预览（可选）
+          }
+        }
+      ]
+    ]
 }
