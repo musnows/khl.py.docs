@@ -10,8 +10,8 @@ module.exports = {
   ],// 需要被注入到当前页面的 HTML <head> 中的标签
   markdown: {
     lineNumbers: true, // 代码行号
-    toc: { includeLevel: [1, 2, 3,4] },
-    extractHeaders: [ 'h2', 'h3', 'h4']
+    toc: { includeLevel: [1, 2, 3, 4] },
+    extractHeaders: ['h2', 'h3', 'h4']
   },
   base: '/',
   themeConfig: {
@@ -36,7 +36,12 @@ module.exports = {
       { text: '主页', link: '/' },
       { text: '文档', link: '/docs/' },
       { text: '示例', link: 'https://github.com/TWT233/khl.py/tree/main/example' },
-      { text: 'Github', link: 'https://github.com/TWT233/khl.py' },
+      {
+        text: 'Github',
+        items: [{ text: 'khl.py', link: 'https://github.com/TWT233/khl.py' },
+        { text: 'khl.py.docs', link: 'https://github.com/musnows/khl.py.docs' }
+      ]
+      },
       { text: 'KOOK', link: 'https://kook.top/exKy0f' },
     ]
   }
