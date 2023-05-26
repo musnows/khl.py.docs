@@ -1,5 +1,7 @@
 ---
 title: 引言
+date: 2023-05-26 18:04:29
+permalink: /pages/adc855/
 ---
 
 # 引言
