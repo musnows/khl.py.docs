@@ -62,4 +62,4 @@ pip3.10 install khl.py
 
 _talk is cheap, show me the code_
 
-先从 [初始化机器人](./bot/init) 开始吧！
+先从 [初始化机器人](/pages/e87ea9/) 开始吧！
