@@ -16,7 +16,11 @@ module.exports = {
   base: '/',
   themeConfig: {
     logo: '/img/logo.png',
-    //displayAllHeaders: true, // 默认值：false
+    // displayAllHeaders: true, // 默认值：false
+    // repo: 'https://github.com/musnows/khl.py.docs',
+    // repoLabel: '查看源文档',
+    // editLinks: true,
+    // editLinkText: '帮助我们完善此页面！',
     sidebar: {
       '/docs/bot/': [
         '',
