@@ -4,11 +4,25 @@ date: 2023-05-27 20:46:49
 permalink: /pages/25f08c/
 ---
 
+
 ## 1.官方example
 
 https://github.com/TWT233/khl.py/tree/main/example
 
-## 2.社区项目
+## 2.社区贡献者
+
+https://github.com/TWT233/khl.py/graphs/contributors
+
+## 3.功能扩展
+
+| 项目                                                       | 说明                                 |
+| ---------------------------------------------------------- | ------------------------------------ |
+| [KHLDaemon](https://github.com/DancingSnow0517/KHLDaemon)  | 一个基于 TWT233 的 khl.py 的插件系统 |
+| [khl-voice-api](https://github.com/hank9999/khl-voice-API) | 开黑啦 V3 语音API                    |
+
+
+
+## 4.社区项目
 
 在这里，你可以看到使用了`khl.py`的社区机器人项目
 
