@@ -22,7 +22,7 @@ module.exports = {
     nav: [
       { text: '主页', link: '/' },
       { text: '文档', link: '/docs/' },
-      { text: '示例', link: 'https://github.com/TWT233/khl.py/tree/main/example' },
+      { text: '示例', link: '/exp/' },
       {
         text: 'Github',
         items: [{ text: 'khl.py', link: 'https://github.com/TWT233/khl.py' },
