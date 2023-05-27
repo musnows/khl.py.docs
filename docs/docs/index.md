@@ -9,6 +9,8 @@ permalink: /pages/adc855/
 首先欢迎大家来使用 [khl.py](https://github.com/TWT233/khl.py)！如果有兴趣的话，也非常欢迎大家来一起开发和维护`khl.py`
 
 > 本文档基于 `khl.py 0.3.16` 和 `python 3.10.6`
+>
+> 您可以在 [musnows/khl.py.docs/tree/main/code](https://github.com/musnows/khl.py.docs/tree/main/code) 查看本文档教程中涉及到的代码
 
 废话就不多说了，我们先来康康入门的准备工作有哪些：
 
