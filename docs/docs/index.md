@@ -8,6 +8,8 @@ permalink: /pages/adc855/
 
 首先欢迎大家来使用 [khl.py](https://github.com/TWT233/khl.py)！如果有兴趣的话，也非常欢迎大家来一起开发和维护`khl.py`
 
+本文档基于 `khl.py` 版本 `v0.3.16`
+
 废话就不多说了，我们先来康康入门的准备工作有哪些：
 
 ## 准备点米：整个机器人
@@ -16,10 +18,10 @@ permalink: /pages/adc855/
 
 1. 准备一个 [kookapp.cn](https://www.kookapp.cn/) 的账号
 2. 来 [服务器：「KOOK」开发者内测](https://kaihei.co/RzFIH8) 申请开发者内测权限
-3. 在 [网页后台：开发者中心 - 应用](https://developer.kaiheila.cn/app/index) 创建一个应用，然后点开刚创建好的应用
+3. 在 [网页后台：开发者中心 - 应用](https://developer.kaiheila.cn/app/index) 创建一个「应用」，然后点开刚创建好的应用
     - 大家能在左侧的「设置」选项卡列表中看到一项「机器人」，点开它
     - 点开「机器人」选项卡后，就能看到机器人的信息以及「机器人连接模式」、「Token」两项重要选项
-        - 「机器人连接模式」请设置为「websocket」，这是一种很好用的连接方式，且本教程前半段都不会讲 webhook
+        - 「机器人连接模式」请设置为「websocket」，这是一种很好用的连接方式。当然，你也可以选择「webhook」具体操作都会在初始化机器人章节讲解。
         - 「Token」是机器人的身份凭证，**请不要上传到任何地方 / 告诉其他人 / 直接写进代码 / 上传到代码托管平台**
 
 ## 准备口锅：搭个机器人的运行环境
@@ -37,7 +39,7 @@ pip install khl.py
 
 _注意：如果你的机器上同时有多个版本的 python，要注意别装到错误版本的 python 里了_
 
-比如，安装的是 `python 3.10.x`，则应该用如下命令安装 `khl.py`
+如果安装的是 `python 3.10.x`，则应该用如下命令安装 `khl.py`
 
 ~~~shell
 pip3.10 install khl.py
@@ -51,6 +53,7 @@ pip3.10 install khl.py
 
 1. [khl.py](https://github.com/TWT233/khl.py) 是全异步的 API 框架
     - 异步是个啥？这个问题就不展开说了，大家可以百度/谷歌一下「异步 同步」，两者对照起来学比较快
+    - 这篇文章里对异步和同步的描述就比较形象 -> [对python async与await的理解](https://blog.csdn.net/MaNong125/article/details/120987087)
 2. [khl.py](https://github.com/TWT233/khl.py) 使用 [aiohttp](https://docs.aiohttp.org/en/stable/) 实现网络通信功能
     - 所以你可以直接让机器人用 `aiohttp` 来访问网站、获取资源，不需要再 `import requests` 了
     - `aiohttp` 也是全异步的网络框架，所以和我们的代码相性非常好
