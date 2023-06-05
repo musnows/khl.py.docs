@@ -24,18 +24,19 @@ async def img_upload():
     img = None
     with open('./config/logo.png','rb') as f:
         img = io.BytesIO(f.read())
-        # img = io.BytesIO(f.read()).getvalue() # 也可以
+        # 下面的方式也可以，但是在传入create_asset函数时，编译器可能会报参数不匹配的警告
+        # img = io.BytesIO(f.read()).getvalue() 
     
     img_url = await bot.client.create_asset(img) 
     print("open ",img_url)
 
     # 方法3 和PIL库对接
     img = Image.open('./config/logo.png')
-    imgByteArr = io.BytesIO()
-    img.save(imgByteArr, format='PNG') # 保存到内存中
-    # img.save('./test.png') # 保存到磁盘中（测试）
-    imgByte = imgByteArr.getvalue() # 获取到bytes对象
-    img_url = await bot.client.create_asset(imgByte) # 上传
+    img_byte_arr = io.BytesIO()
+    img.save(img_byte_arr, format='PNG') # 保存到内存中
+    # img.save('./test.png') # 保存到磁盘中（仅作测试）
+    img_byte = io.BytesIO(img_byte_arr.getvalue()) # 获取到bytes对象，再套一层io避免报警告
+    img_url = await bot.client.create_asset(img_byte) # 上传
     print("PIL ",img_url)
 
     return img_url
@@ -60,13 +61,16 @@ async def img_cmd(msg:Message,type:int=0):
         print('get /img cmd',type)
         if type == 0:
             # 直接上传图片
-            await msg.reply(IMG_URL,type=MessageTypes.IMG)
+            await msg.reply(IMG_URL,type=MessageTypes.IMG) # 必须要指明 msg 的类型为 IMG 图片
             print("reply img only")
         else:
             # 卡片消息中的图片
             cm = CardMessage(Card(
                 Module.Container(Element.Image(src=IMG_URL))
             ))
+            # 使用了 Container 容器来存放 Image 元素，传入图片的 url 就可以了
+            #  - 这里可以使用第三方图床的 url，但必须要保证该 url 能在国内被正常访问
+            #  - 否则 kook 访问不到图片，会报卡片消息 json 格式不正确的错误
             await msg.reply(cm)
             print("reply img in cardmsg")
     except:
