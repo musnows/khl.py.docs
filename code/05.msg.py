@@ -1,3 +1,4 @@
+import json
 import traceback
 from khl import Bot, Message, MessageTypes
 from khl.card import Card, CardMessage, Module, Types
@@ -54,6 +55,15 @@ async def test_cmd(msg: Message, type, *arg):
             img_url = await bot.client.create_asset('./config/logo.png') # 先上传图片并获取链接
             await msg.reply(img_url,type=MessageTypes.IMG)
             print(f"send img | {img_url}")
+
+    except Exception as result:
+        print(traceback.format_exc())
+
+@bot.command(name='card')
+async def card_msg_cmd(msg:Message,*arg):
+    """发送卡片消息"""
+    try:
+        print(f"/card cmd recv from {msg.author_id}")
 
     except Exception as result:
         print(traceback.format_exc())
