@@ -1,6 +1,8 @@
 import json
 import traceback
-from khl import Bot, Message, MessageTypes
+from datetime import datetime, timedelta
+
+from khl import Bot, Message, MessageTypes, Event, EventTypes
 from khl.card import Card, CardMessage, Module, Types, Element, Struct
 
 from utils.file import open_file
@@ -98,13 +100,92 @@ async def card_msg_cmd(msg: Message, *arg):
         c4 = Card(
             Module.Section(
                 Element.Text("文字在右侧", type=Types.Text.KMD),
-                Element.Image(src=msg.author.avatar, alt="left"),
+                Element.Image(src=msg.author.avatar),
+            )
+        )
+        c5 = Card(
+            Module.Section(
+                Element.Text("文字在左侧", type=Types.Text.KMD),
+                Element.Image(src=msg.author.avatar),
+                mode=Types.SectionMode.RIGHT,
+            )
+        )
+        c6 = Card(
+            Module.Section(
+                Element.Text("文字在左侧", type=Types.Text.KMD),
+                Element.Image(src=msg.author.avatar, size=Types.Size.SM, circle=True),
+                mode=Types.SectionMode.RIGHT,
+            )
+        )  # 设置小图+圆角
+        # 多图
+        c7 = Card(
+            Module.ImageGroup(
+                Element.Image(src=msg.author.avatar),
+                Element.Image(src=msg.author.avatar),
+                Element.Image(src=msg.author.avatar),
+                Element.Image(src=msg.author.avatar),
+            )
+        )
+
+        # 4.按钮
+        c8 = Card(
+            Module.ActionGroup(
+                Element.Button(
+                    "按钮文字1",
+                    value="按钮值1",
+                    click=Types.Click.RETURN_VAL,
+                    theme=Types.Theme.INFO,
+                ),
+                Element.Button(
+                    "按钮文字2",
+                    value="按钮值2",
+                    click=Types.Click.RETURN_VAL,
+                    theme=Types.Theme.DANGER,
+                ),
+                Element.Button(
+                    "按钮文字3",
+                    value="https://khl-py.eu.org/",
+                    click=Types.Click.LINK,
+                    theme=Types.Theme.SECONDARY,
+                ),
+            )
+        )
+        c9 = Card(
+            Module.Section(
+                Element.Text("这里是文字", type=Types.Text.KMD),
+                Element.Button(
+                    "这里是按钮",
+                    value="按钮值1",
+                    click=Types.Click.RETURN_VAL,
+                    theme=Types.Theme.INFO,
+                ),
+            )
+        )
+
+        # 5.倒计时
+        c10 = Card(
+            Module.Countdown(
+                datetime.now() + timedelta(seconds=360000), mode=Types.CountdownMode.DAY
+            ),
+            Module.Countdown(
+                datetime.now() + timedelta(seconds=3600), mode=Types.CountdownMode.HOUR
+            ),
+            Module.Countdown(
+                datetime.now() + timedelta(seconds=3600),
+                mode=Types.CountdownMode.SECOND,
+            ),
+        )
+        # 倒计时是在30s之前开始的
+        c11 = Card(
+            Module.Countdown(
+                datetime.now() + timedelta(seconds=60),
+                mode=Types.CountdownMode.SECOND,
+                start=datetime.now() - timedelta(seconds=30),
             )
         )
 
         # 插入到卡片消息中
-        cm.append(c3)
-        cm.append(c4)
+        cm.append(c11)
         # cm.append(c1)
         await msg.reply(cm)
 
@@ -112,7 +193,11 @@ async def card_msg_cmd(msg: Message, *arg):
         print(traceback.format_exc())
 
 
-from datetime import datetime, timedelta
+@bot.on_event(EventTypes.MESSAGE_BTN_CLICK)
+async def btn_click_event(b: Bot, e: Event):
+    """按钮点击事件"""
+    print(e.target_id)
+    print(e.body, "\n")
 
 
 @bot.task.add_date((datetime.now() + timedelta(seconds=10)), timezone="Asia/Shanghai")
