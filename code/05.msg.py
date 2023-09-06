@@ -68,5 +68,14 @@ async def card_msg_cmd(msg:Message,*arg):
     except Exception as result:
         print(traceback.format_exc())
 
+from datetime import datetime,timedelta
+@bot.task.add_date(( datetime.now() + timedelta(seconds=10)),timezone='Asia/Shanghai')
+async def test_date_task():
+    ...
+
+@bot.on_shutdown
+async def test_shutdown_task(b:Bot):
+    ...
+
 print("bot start")
 bot.run()
