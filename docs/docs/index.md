@@ -67,7 +67,7 @@ pip3.10 install khl.py
 
 _talk is cheap, show me the code_
 
-> 正式开始开发之前，您还需要阅读 [kook各类ID获取办法](./pages/6f0928/)
+> 正式开始开发之前，您还需要阅读 [kook各类ID获取办法](/pages/6f0928/)
 
 先从 [初始化机器人](/pages/e87ea9/) 开始吧！
 
