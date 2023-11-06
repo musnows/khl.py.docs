@@ -19,11 +19,11 @@ permalink: /pages/adc855/
 巧妇难为无米之炊，所以首先要做的事儿当然是整个机器人来啦，流程也很简单，只要三部
 
 1. 准备一个 [kookapp.cn](https://www.kookapp.cn/) 的账号
-2. 来 [服务器：「KOOK」开发者内测](https://kaihei.co/RzFIH8) 申请开发者内测权限
+2. 来 [服务器：「KOOK」开发者内测](https://kaihei.co/RzFIH8) 申请开发者内测权限（目前已不需要申请）
 3. 在 [网页后台：开发者中心 - 应用](https://developer.kaiheila.cn/app/index) 创建一个「应用」，然后点开刚创建好的应用
     - 大家能在左侧的「设置」选项卡列表中看到一项「机器人」，点开它
     - 点开「机器人」选项卡后，就能看到机器人的信息以及「机器人连接模式」、「Token」两项重要选项
-        - 「机器人连接模式」请设置为「websocket」，这是一种很好用的连接方式。当然，你也可以选择「webhook」具体操作都会在初始化机器人章节讲解。
+        - 「机器人连接模式」请设置为「websocket」，这是一种很好用的连接方式。当然，你也可以选择「webhook」。具体操作都会在初始化机器人章节讲解。
         - 「Token」是机器人的身份凭证，**请不要上传到任何地方 / 告诉其他人 / 直接写进代码 / 上传到代码托管平台**
 
 ## 准备口锅：搭个机器人的运行环境
@@ -31,8 +31,8 @@ permalink: /pages/adc855/
 巧妇有了，米有了，接下来就是要口锅来装米才行，而给 [khl.py](https://github.com/TWT233/khl.py) 用的「锅」也很好搭，两步即可：
 
 1. 安装 python，版本号`>=3.6.8`即可
-    - 为什么是 `3.6.8`？因为 centos7 能直接通过 epel 安装 `python 3.6.8`，所以 centos 选手也不需要从源码编译了，直接通过 epel 安装即可，很方便
-    - 不过，还是建议安装较新版本的 `python 3.10.x` -> [CentOS安装Python3.10教程](https://blog.musnow.top/posts/847195816/?utm_source=khlpydocs)
+    - 为什么是 `3.6.8`？因为 centos7 能直接通过 epel 安装 `python 3.6.8`，所以 centos 选手也不需要从源码编译了，直接通过 epel 安装即可，很方便；
+    - 不过，还是建议安装较新版本的 `python 3.10.x`，参考 [CentOS安装Python3.10教程](https://blog.musnow.top/posts/847195816/?utm_source=khlpydocs)；
 2. 运行以下命令来安装 [khl.py](https://github.com/TWT233/khl.py)：
 
 ```shell
@@ -41,13 +41,11 @@ pip install khl.py
 
 _注意：如果你的机器上同时有多个版本的 python，要注意别装到错误版本的 python 里了_
 
-如果安装的是 `python 3.10.x`，则应该用如下命令安装 `khl.py`
+如果你的系统上安装的是 `python 3.10.x`，则应该用如下命令安装 `khl.py`
 
 ~~~shell
 pip3.10 install khl.py
 ~~~
-
-
 
 ## 劈劈柴火：稍微了解一下 khl.py
 
