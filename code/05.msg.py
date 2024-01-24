@@ -209,6 +209,6 @@ async def test_date_task():
 async def test_shutdown_task(b: Bot):
     ...
 
-
-print("bot start")
-bot.run()
+if __name__ == '__main__':
+    print("bot start")
+    bot.run()

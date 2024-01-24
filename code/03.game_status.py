@@ -118,6 +118,6 @@ async def music_down_cmd(msg: Message):
     except:
         print(traceback.format_exc())  # 如果出现异常，打印错误
 
-
-print("bot start")
-bot.run()
+if __name__ == '__main__':
+    print("bot start")
+    bot.run()

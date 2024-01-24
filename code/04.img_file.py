@@ -110,6 +110,6 @@ async def file_cmd(msg:Message,stype:int=0):
     except:
         print("file cmd",traceback.format_exc()) # 打印错误信息
 
-
-print('bot run')
-bot.run()
+if __name__ == '__main__':
+    print('bot run')
+    bot.run()

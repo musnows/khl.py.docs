@@ -39,5 +39,6 @@ async def join_guild_send_event(b: Bot, e: Event):
     except Exception as result:
         print(traceback.format_exc())  # 打印报错详细信息
 
-
-bot.run()
+if __name__ == '__main__':
+    print("bot start")
+    bot.run()
