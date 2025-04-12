@@ -24,6 +24,6 @@
     "yamljs": "^0.3.0"
   },
   "dependencies": {
-    "vuepress-plugin-vdoing-comment": "^1.1.0"
+    "vuepress-plugin-vdoing-comment": "^1.3.0"
   }
 }
